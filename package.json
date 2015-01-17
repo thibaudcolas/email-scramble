@@ -4,8 +4,9 @@
   "description": "Scrambles email addresses to hide them from bots.",
   "main": "email-scramble.js",
   "scripts": {
-    "test": "mocha test/*.js",
-    "lint": "jshint email-scramble.js test/*.js"
+    "test": "istanbul cover _mocha -- -R spec",
+    "lint": "jshint email-scramble.js test/*.js",
+    "codeclimate": "CODECLIMATE_REPO_TOKEN=dcfbb93321d8ba7c68bc53c7e230a48e1d6aa6d3891f6a06c5d034b0261c2dfb codeclimate < coverage/lcov.info"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,8 @@
   "homepage": "https://github.com/ThibWeb/email-scramble",
   "devDependencies": {
     "chai": "^1.10.0",
+    "codeclimate-test-reporter": "0.0.4",
+    "istanbul": "^0.3.5",
     "mocha": "^2.1.0"
   }
 }
