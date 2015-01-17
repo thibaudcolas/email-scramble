@@ -1,6 +1,6 @@
 {
   "name": "email-scramble",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scrambles email addresses to hide them from bots.",
   "main": "email-scramble.js",
   "scripts": {
