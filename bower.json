@@ -33,6 +33,6 @@
     "bower_components",
     "package.json",
     "test",
-    "tests"
+    "examples"
   ]
 }

@@ -5,4 +5,5 @@
 .npmignore
 .travis.yml
 test/
+examples/
 bower.json
