@@ -5,7 +5,7 @@ email-scramble
 
 Scrambles email addresses to hide them from bots. This library can be used server-side with Node/io.js or on the front-end.
 
-Have a look at [the examples](#)
+Have a look at [the examples](https://rawgit.com/ThibWeb/email-scramble/master/examples/index.html).
 
 If you'd like to know more about email obfuscation techniques and their success ratio, [here's a great blog post on the subject](http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/).
 
@@ -57,15 +57,12 @@ This library can be used as a Node/io.js/Browserify CommonJS-like module, a Requ
 $ npm install
 $ npm test
 $ npm run lint
-$ npm start
 ~~~
 
 ## Built with
 
 - https://github.com/mathiasbynens/rot
 - https://github.com/umdjs/umd
-
-## TODO
 
 ## LICENSE (ISC)
 
