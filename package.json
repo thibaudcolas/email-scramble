@@ -5,7 +5,7 @@
   "main": "email-scramble.js",
   "scripts": {
     "test": "mocha test/*.js",
-    "lint": "jshint ."
+    "lint": "jshint email-scramble.js test/*.js"
   },
   "repository": {
     "type": "git",

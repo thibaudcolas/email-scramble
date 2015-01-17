@@ -14,12 +14,14 @@ Scrambles email addresses to hide them from bots.
 ~~~
 $ npm install
 $ npm test
-$ npm lint
+$ npm run lint
 $ npm start
 ~~~
 
 ## Built with
 
+- https://github.com/mathiasbynens/rot
+- https://github.com/umdjs/umd
 
 ## TODO
 

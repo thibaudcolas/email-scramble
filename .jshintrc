@@ -9,10 +9,10 @@
   "noarg"         : true,
   "noempty"       : true,
   "nonew"         : true,
-  "plusplus"      : true,
+  "plusplus"      : false,
   "regexp"        : true,
   "undef"         : true,
-  "strict"        : false,
+  "strict"        : true,
   "trailing"      : true,
 
   "asi"           : false,
@@ -63,7 +63,9 @@
   "predef"        : [
     "define",
     "require",
-    "module"
+    "module",
+    "describe",
+    "it"
   ],
   "unused": "vars",
   "quotmark": "single",
