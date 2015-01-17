@@ -1,26 +1,25 @@
 'use strict';
 
 var expect = require('chai').expect;
-var rot = require('../email-scramble').rot;
+var emailScramble = require('../email-scramble');
 
-describe('describe', function() {
+describe('email-scramble', function() {
 
-  it('it', function() {
-    expect(0).to.equal(0);
+  it('is available as a Node module', function() {
+    expect(emailScramble).to.exist;
+    expect(emailScramble).to.be.an('object');
+  });
+
+
+  it('exposes a small API', function() {
+    expect(emailScramble).to.respondTo('_rot');
+    expect(emailScramble).to.respondTo('encode');
+    expect(emailScramble).to.respondTo('decode');
   });
 
   describe('rot implementation', function() {
-    // Produces the following:
-    // ' !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
-    function asciiCharacters() {
-      var characters = '';
-      for (var i = 32; i < 127; i++) {
-        characters += String.fromCharCode(i);
-      }
-      return characters;
-    }
-    console.log(asciiCharacters());
     var testString = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+    var rot = emailScramble._rot;
 
     it('ROT-0', function() {
       expect(rot(testString, 0)).to.equal(' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~');

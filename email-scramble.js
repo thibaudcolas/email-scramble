@@ -11,7 +11,7 @@
   'use strict';
 
   // https://github.com/mathiasbynens/rot
-  function rot(string, n) {
+  var rot = function rot(str, n) {
     /* jshint ignore:start */
     var lowercase = 'abcdefghijklmnopqrstuvwxyz';
     var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -23,21 +23,21 @@
       n = 13;
     }
     n = Number(n);
-    string = String(string);
+    str = String(str);
     if (n == 0) {
-      return string;
+      return str;
     }
     if (n < 0) { // decode instead of encode
       n += 26;
     }
-    var length = string.length; // note: no need to account for astral symbols
+    var length = str.length; // note: no need to account for astral symbols
     var index = -1;
     var result = '';
     var character;
     var currentPosition;
     var shiftedPosition;
     while (++index < length) {
-      character = string.charAt(index);
+      character = str.charAt(index);
       if (regexLowercase.test(character)) {
         currentPosition = lowercase.indexOf(character);
         shiftedPosition = (currentPosition + n) % 26;
@@ -52,9 +52,19 @@
     }
     return result;
     /* jshint ignore:end */
-  }
+  };
+
+  var encode = function encode(str, n) {
+    return rot(str, n);
+  };
+
+  var decode = function encode(str, n) {
+    return rot(str, -n);
+  };
 
   return {
-    rot: rot
+    _rot: rot,
+    encode: encode,
+    decode: decode
   };
 }));
