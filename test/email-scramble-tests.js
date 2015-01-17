@@ -4,23 +4,24 @@ var expect = require('chai').expect;
 var emailScramble = require('../email-scramble');
 
 describe('email-scramble', function() {
+  var testString = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~';
+
+  var rot = emailScramble._rot;
+  var encoder = emailScramble.encoder;
+  var decoder = emailScramble.decoder;
 
   it('is available as a Node module', function() {
-    expect(emailScramble).to.exist;
+    expect(emailScramble).to.exist();
     expect(emailScramble).to.be.an('object');
   });
 
-
   it('exposes a small API', function() {
     expect(emailScramble).to.respondTo('_rot');
-    expect(emailScramble).to.respondTo('encode');
-    expect(emailScramble).to.respondTo('decode');
+    expect(emailScramble).to.respondTo('encoder');
+    expect(emailScramble).to.respondTo('decoder');
   });
 
-  describe('rot implementation', function() {
-    var testString = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~';
-    var rot = emailScramble._rot;
-
+  describe('ROT implementation', function() {
     it('ROT-0', function() {
       expect(rot(testString, 0)).to.equal(' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~');
     });
@@ -144,6 +145,32 @@ describe('email-scramble', function() {
     it('ROT-26 == ROT-0', function() {
       expect(rot(testString, 26)).to.equal(rot(testString, 0));
     });
+  });
+
+  describe('encode & decode', function() {
+    it('encodes by using the ROT implementation', function() {
+      for (var i = 0; i < 27; i++) {
+        expect(encoder(i)(testString)).to.equal(rot(testString, i));
+      }
+    });
+
+    it('decodes by using the ROT implementation', function() {
+      for (var i = 0; i < 27; i++) {
+        expect(decoder(i)(testString)).to.equal(rot(testString, -i));
+      }
+    });
+
+    it('can be chained together', function () {
+      for (var i = 0; i < 27; i++) {
+        expect(decoder(i)(encoder(i)(testString))).to.equal(testString);
+        expect(encoder(i)(decoder(i)(testString))).to.equal(testString);
+        expect(decoder(i)(encoder(i)(decoder(i)(encoder(i)(testString))))).to.equal(testString);
+      }
+    });
+  });
+
+  describe('emails', function() {
 
   });
+
 });

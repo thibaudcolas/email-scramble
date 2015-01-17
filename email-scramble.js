@@ -54,17 +54,21 @@
     /* jshint ignore:end */
   };
 
-  var encode = function encode(str, n) {
-    return rot(str, n);
+  var encoder = function encoder(n) {
+    return function encode(str) {
+      return rot(str, n);
+    };
   };
 
-  var decode = function encode(str, n) {
-    return rot(str, -n);
+  var decoder = function decoder(n) {
+    return function decode(str) {
+      return rot(str, -n);
+    };
   };
 
   return {
     _rot: rot,
-    encode: encode,
-    decode: decode
+    encoder: encoder,
+    decoder: decoder
   };
 }));
