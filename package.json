@@ -1,0 +1,38 @@
+{
+  "name": "email-scramble",
+  "version": "1.0.0",
+  "description": "Scrambles email addresses to hide them from bots.",
+  "main": "email-scramble.js",
+  "scripts": {
+    "test": "mocha test/*.js",
+    "lint": "jshint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ThibWeb/email-scramble"
+  },
+  "keywords": [
+    "email",
+    "mail",
+    "address",
+    "scramble",
+    "obfuscate",
+    "obfuscation",
+    "hide",
+    "hidden",
+    "mumble",
+    "cloack",
+    "rot",
+    "rot13"
+  ],
+  "author": "ThibWeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ThibWeb/email-scramble/issues"
+  },
+  "homepage": "https://github.com/ThibWeb/email-scramble",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "mocha": "^2.1.0"
+  }
+}
