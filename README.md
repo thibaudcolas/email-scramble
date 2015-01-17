@@ -5,9 +5,25 @@ email-scramble
 
 Scrambles email addresses to hide them from bots. This library can be used server-side with Node/io.js or on the front-end.
 
-[![NPM](https://nodei.co/npm/email-scramble.png?downloads=true&stars=true)](https://www.npmjs.com/package/email-scramble)
+Have a look at [the examples](#)
+
+If you'd like to know more about email obfuscation techniques and their success ratio, [here's a great blog post on the subject](http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/).
 
 ## Getting Started
+
+### Usage
+
+email-scramble uses a simple ROT transformation. The rotation amount can be any integer between 1 and 25. 0 and 26 won't produce any transformation, other numbers are useless (e.g. ROT-42 = ROT-16).
+
+~~~javascript
+  // To encode, first pick the ROT amount you want.
+  var encode = emailScramble.encoder(16);
+  var encodedEmail = encode('mail@example.com');
+
+  // To decode, you should pick the same ROT amount.
+  var decode = emailScramble.decoder(16);
+  var decodedMail = decode(encodedMail);
+~~~
 
 ### Download
 
@@ -27,7 +43,7 @@ This library can be used as a Node/io.js/Browserify CommonJS-like module, a Requ
     var emailScramble = require('email-scramble');
 
     // Require email-scramble when defining an AMD module.
-    define('mypackage', ['email-scramble'], function () {
+    define('mypackage', ['email-scramble'], function (emailScramble) {
       // [...]
     });
 
@@ -50,8 +66,6 @@ $ npm start
 - https://github.com/umdjs/umd
 
 ## TODO
-
-- More tests
 
 ## LICENSE (ISC)
 
