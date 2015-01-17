@@ -160,17 +160,32 @@ describe('email-scramble', function() {
       }
     });
 
-    it('can be chained together', function () {
+    it('can be chained together', function() {
       for (var i = 0; i < 27; i++) {
         expect(decoder(i)(encoder(i)(testString))).to.equal(testString);
         expect(encoder(i)(decoder(i)(testString))).to.equal(testString);
-        expect(decoder(i)(encoder(i)(decoder(i)(encoder(i)(testString))))).to.equal(testString);
       }
     });
   });
 
   describe('emails', function() {
+    it('can be encoded with encode', function() {
+      var encode = encoder(5);
+      expect(encode('mail@example.com')).to.equal(('rfnq@jcfruqj.htr'));
+      expect(encode('testmail@example.com')).to.equal(('yjxyrfnq@jcfruqj.htr'));
+      expect(encode('mail@testexample.com')).to.equal(('rfnq@yjxyjcfruqj.htr'));
+      expect(encode('mail@example.test')).to.equal(('rfnq@jcfruqj.yjxy'));
+      expect(encode('mail+ref@example.com')).to.equal(('rfnq+wjk@jcfruqj.htr'));
+    });
 
+    it('can be decoded with decode', function() {
+      var decode = decoder(5);
+      expect(decode('rfnq@jcfruqj.htr')).to.equal(('mail@example.com'));
+      expect(decode('yjxyrfnq@jcfruqj.htr')).to.equal(('testmail@example.com'));
+      expect(decode('rfnq@yjxyjcfruqj.htr')).to.equal(('mail@testexample.com'));
+      expect(decode('rfnq@jcfruqj.yjxy')).to.equal(('mail@example.test'));
+      expect(decode('rfnq+wjk@jcfruqj.htr')).to.equal(('mail+ref@example.com'));
+    });
   });
 
 });
