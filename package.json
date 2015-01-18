@@ -1,7 +1,7 @@
 {
   "name": "email-scramble",
-  "version": "1.0.1",
-  "description": "Scrambles email addresses to hide them from bots.",
+  "version": "2.0.0",
+  "description": "Scrambles email addresses and phone numbers with ROT-18 to hide them from bots",
   "main": "email-scramble.js",
   "scripts": {
     "test": "istanbul cover _mocha -- -R spec",
@@ -16,6 +16,10 @@
     "email",
     "mail",
     "address",
+    "phone",
+    "telephone",
+    "cellphone",
+    "tel",
     "scramble",
     "obfuscate",
     "obfuscation",
