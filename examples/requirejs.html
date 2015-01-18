@@ -196,9 +196,9 @@
 
         <div class="inner cover">
           <h1>RequireJS</h1>
-          <p class="lead"><a id="link" href="rfnqyt:rfnq@jcfruqj.htr">rfnq@jcfruqj.htr</a></p>
+          <p class="lead"><a id="link" href="znvygb:znvy@rknzcyr.pbz">znvy@rknzcyr.pbz</a></p>
           <form>
-            <input id="field" class="form-control col-xs-2" type="text" value="rfnq@jcfruqj.htr" placeholder="Enter an email here">
+            <input id="field" class="form-control col-xs-2" type="text" value="znvy@rknzcyr.pbz" placeholder="Enter an email here">
           </form>
           <p class="lead">
             <br>
@@ -221,15 +221,15 @@
         }
     };
   </script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
   <script>
     require([
       'email-scramble'
     ], function(emailScramble) {
       'use strict';
 
-      var decode = emailScramble.decoder(5);
-      var encode = emailScramble.encoder(5);
+      var decode = emailScramble.decode;
+      var encode = emailScramble.encode;
 
       var decodeBtn = document.getElementById('decode');
       var encodeBtn = document.getElementById('encode');

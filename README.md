@@ -7,35 +7,29 @@ Scrambles email addresses to hide them from bots. This library can be used serve
 
 Have a look at [the examples](https://rawgit.com/ThibWeb/email-scramble/master/examples/index.html).
 
-If you'd like to know more about email obfuscation techniques and their success ratio, [here's a great blog post on the subject](http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/).
+If you'd like to know more about obfuscation techniques and their success ratio, [here's a great blog post on the subject](http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/).
 
 ## Getting Started
 
-email-scramble uses a simple ROT transformation. The rotation amount can be any integer between 1 and 25. 0 and 26 won't produce any transformation, other numbers are useless (e.g. ROT-42 = ROT-16).
+email-scramble uses a simple ROT transformation. The default rotation is ROT-18, which means that letters will be rotated by 13 and numbers by 5.
 
 ~~~javascript
-  // To encode, first pick the ROT amount you want.
-  var encode = emailScramble.encoder(16);
-  var encodedEmail = encode('mail@example.com');
+  var encodedEmail = emailScramble.encode('mail@example.com');
+  var decodedMail = emailScramble.decode(encodedMail);
 
-  // To decode, you should pick the same ROT amount.
-  var decode = emailScramble.decoder(16);
-  var decodedMail = decode(encodedMail);
+  // You can also pick any other flavor of ROT:
+  function myROT(str) {
+    return emailScramble.rot(str, 8, 3);
+  }
 ~~~
 
 Here's a real-world example:
 
 ~~~javascript
-  (function (emailScramble) {
-    'use strict';
-    var decode = emailScramble.decoder(5);
-
-    // <a id="scrambled" href="rfnqyt:rfnq@jcfruqj.htr">rfnq@jcfruqj.htr</a>
-    var link = document.getElementById('scrambled');
-    link.href = decode(link.href);
-    link.innerHTML = decode(link.innerHTML);
+  // <a id="scrambled" href="znvygb:znvy@rknzcyr.pbz">Send me an email!</a>
+  var link = document.getElementById('scrambled');
+  link.href = emailScramble.decode(link.href);
 ~~~
-
 
 ### Download & import
 
