@@ -11,7 +11,6 @@ var decode = emailScramble.decode;
 
 describe('email-scramble', function() {
   it('is available as a Node module', function() {
-    expect(emailScramble).to.exist();
     expect(emailScramble).to.be.an('object');
   });
 
