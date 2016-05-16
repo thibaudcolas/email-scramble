@@ -15,22 +15,25 @@ Scrambles email addresses and phone numbers with ROT-18 to hide them from bots. 
 email-scramble uses a simple ROT transformation. The default rotation is ROT-18, which means that letters will be rotated by 13 and numbers by 5.
 
 ```js
-  var encodedEmail = emailScramble.encode('mail@example.com');
-  var decodedMail = emailScramble.decode(encodedMail);
+var encodedEmail = emailScramble.encode('mail@example.com');
+var decodedMail = emailScramble.decode(encodedMail);
 
-  // You can also pick any other flavor of ROT:
-  function myROT(str) {
-    // Here letters are obfuscated with ROT-13 and numbers are kept clear.
-    return emailScramble.rot(13, 0, str);
-  }
+// You can also pick any other flavor of ROT:
+function myROT(str) {
+  // Here letters are obfuscated with ROT-13 and numbers are kept clear.
+  return emailScramble.rot(13, 0, str);
+}
 ```
 
 Here's a real-world example:
 
 ```js
-  // <a id="scrambled" href="znvygb:znvy@rknzcyr.pbz">Send me an email!</a>
-  var link = document.getElementById('scrambled');
+// <a href="znvygb:znvy@rknzcyr.pbz" data-email-scramble>Send me an email!</a>
+var links = document.querySelectorAll('[data-email-scramble]');
+
+links.forEach(function decodeLink(link) {
   link.href = emailScramble.decode(link.href);
+});
 ```
 
 ### Download & import
@@ -46,6 +49,8 @@ This library can be used as an ES6 module, Node/io.js/Browserify CommonJS-like m
 
 ```js
 // ES6
+import emailScramble from 'email-scramble';
+
 // The CommonJS way.
 var emailScramble = require('email-scramble');
 
@@ -64,7 +69,7 @@ var emailScramble = window.emailScramble;
 npm install
 npm test
 npm run lint
-```bash
+```
 
 ## Built with
 
