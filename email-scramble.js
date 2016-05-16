@@ -11,7 +11,7 @@
   'use strict';
 
   // Largely taken from https://github.com/mathiasbynens/rot.
-  var rot = function rot(str, charRot, numRot) {
+  var rot = function rot(charRot, numRot, str) {
     var numbers = '0123456789';
     var lowercase = 'abcdefghijklmnopqrstuvwxyz';
     var uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -55,7 +55,7 @@
   };
 
   var rot18 = function rot18(str) {
-    return rot(str, 13, 5);
+    return rot(13, 5, str);
   };
 
   return {

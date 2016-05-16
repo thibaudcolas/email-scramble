@@ -19,7 +19,7 @@ email-scramble uses a simple ROT transformation. The default rotation is ROT-18,
   // You can also pick any other flavor of ROT:
   function myROT(str) {
     // Here letters are obfuscated with ROT-13 and numbers are kept clear.
-    return emailScramble.rot(str, 13, 0);
+    return emailScramble.rot(13, 0, str);
   }
 ~~~
 
@@ -70,7 +70,7 @@ $ npm run lint
 
 ## LICENSE (ISC)
 
-Copyright (c) 2015, Thibaud Colas
+Copyright (c) 2016, Thibaud Colas
 
 Permission to use, copy, modify, and/or distribute this software for any
 purpose with or without fee is hereby granted, provided that the above
