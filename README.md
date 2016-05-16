@@ -67,9 +67,13 @@ var emailScramble = window.emailScramble;
 ## Contributing
 
 ```bash
+# Install deps
 npm install
+# Test
 npm test
 npm run lint
+# Install git hooks
+./.githooks/deploy
 ```
 
 ## Built with
