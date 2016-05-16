@@ -1,6 +1,8 @@
 email-scramble
 ==============
 
+> Universal JavaScript helper to encode/decode emails on the back-end and front-end.
+
 [![npm](https://img.shields.io/npm/v/email-scramble.svg?style=flat-square)](https://www.npmjs.com/package/email-scramble) [![Bower](https://img.shields.io/bower/v/email-scramble.svg?style=flat-square)](http://bower.io/search/?q=email-scramble) [![Build Status](https://img.shields.io/travis/ThibWeb/email-scramble.svg?style=flat-square)](https://travis-ci.org/ThibWeb/email-scramble) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/email-scramble.svg?style=flat-square)](https://david-dm.org/ThibWeb/email-scramble#info=devDependencies) [![Code Climate](https://img.shields.io/codeclimate/github/ThibWeb/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/email-scramble) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/ThibWeb/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/email-scramble)
 
 Scrambles email addresses and phone numbers with ROT-18 to hide them from bots. This library can be used server-side with Node/io.js or on the front-end (CommonJS, AMD, global variable).
@@ -12,7 +14,7 @@ Scrambles email addresses and phone numbers with ROT-18 to hide them from bots. 
 
 email-scramble uses a simple ROT transformation. The default rotation is ROT-18, which means that letters will be rotated by 13 and numbers by 5.
 
-~~~javascript
+```js
   var encodedEmail = emailScramble.encode('mail@example.com');
   var decodedMail = emailScramble.decode(encodedMail);
 
@@ -21,47 +23,48 @@ email-scramble uses a simple ROT transformation. The default rotation is ROT-18,
     // Here letters are obfuscated with ROT-13 and numbers are kept clear.
     return emailScramble.rot(13, 0, str);
   }
-~~~
+```
 
 Here's a real-world example:
 
-~~~javascript
+```js
   // <a id="scrambled" href="znvygb:znvy@rknzcyr.pbz">Send me an email!</a>
   var link = document.getElementById('scrambled');
   link.href = emailScramble.decode(link.href);
-~~~
+```
 
 ### Download & import
 
-email-scramble is available on [npm](https://www.npmjs.com/package/email-scramble) and [bower](http://bower.io/search/?q=email-scramble), or you can [download a ZIP](https://github.com/ThibWeb/email-scramble/releases)
+`email-scramble` is available on [npm](https://www.npmjs.com/package/email-scramble) and [bower](http://bower.io/search/?q=email-scramble), or you can [download a ZIP](https://github.com/ThibWeb/email-scramble/releases)
 
-~~~
-$ npm install --save email-scramble
-$ bower install --save email-scramble
-~~~
+```
+npm install --save email-scramble
+bower install --save email-scramble
+```
 
-This library can be used as a Node/io.js/Browserify CommonJS-like module, a RequireJS AMD module or a global:
+This library can be used as an ES6 module, Node/io.js/Browserify CommonJS-like module, a RequireJS AMD module or a global:
 
-~~~javascript
-    // The CommonJS way.
-    var emailScramble = require('email-scramble');
+```js
+// ES6
+// The CommonJS way.
+var emailScramble = require('email-scramble');
 
-    // Require email-scramble when defining an AMD module.
-    define('mypackage', ['email-scramble'], function (emailScramble) {
-      // [...]
-    });
+// Require email-scramble when defining an AMD module.
+define('mypackage', ['email-scramble'], function (emailScramble) {
+  // [...]
+});
 
-    // Global variable.
-    var emailScramble = window.emailScramble;
-~~~
+// Global variable.
+var emailScramble = window.emailScramble;
+```
 
 ## Contributing
 
-~~~
-$ npm install
-$ npm test
-$ npm run lint
-~~~
+```bash
+npm install
+npm test
+npm run lint
+```bash
 
 ## Built with
 
