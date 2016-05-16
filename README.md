@@ -23,6 +23,9 @@ function myROT(str) {
   // Here letters are obfuscated with ROT-13 and numbers are kept clear.
   return emailScramble.rot(13, 0, str);
 }
+
+// Functional-programming partial application style:
+var myRot = emailScramble.rot.bind(emailScramble, 13, 0);
 ```
 
 Here's a real-world example:
