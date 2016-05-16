@@ -1,4 +1,4 @@
-(function (root, factory) {
+(function wrapEmailScramble(root, factory) {
   'use strict';
   if (typeof define === 'function' && define.amd) {
     define('email-scramble', factory(root));
@@ -7,7 +7,7 @@
   } else {
     root.emailScramble = factory(root);
   }
-}(this, function (root) {
+}(this, function emailScramble(root) {
   'use strict';
 
   // Largely taken from https://github.com/mathiasbynens/rot.
