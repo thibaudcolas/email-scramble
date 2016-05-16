@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var emailScramble = require('../email-scramble');
+var emailScramble = require('../index');
 
 var testString = ' !"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 

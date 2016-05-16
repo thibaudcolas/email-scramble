@@ -46,7 +46,7 @@ npm install --save email-scramble
 bower install --save email-scramble
 ```
 
-This library can be used as an ES6 module, Node/io.js/Browserify CommonJS-like module, a RequireJS AMD module or a global:
+This library can be used as an ES6 module, Node/Browserify CommonJS-like module, a RequireJS AMD module or a global:
 
 ```js
 // ES6
