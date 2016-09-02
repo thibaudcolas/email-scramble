@@ -3,7 +3,7 @@ email-scramble
 
 > Universal JavaScript helper to encode/decode email addresses and phone numbers with ROT-18 to hide them from bots. This library can be used server-side with Node or on the front-end (CommonJS, AMD, global variable).
 
-[![npm](https://img.shields.io/npm/v/email-scramble.svg?style=flat-square)](https://www.npmjs.com/package/email-scramble) [![Bower](https://img.shields.io/bower/v/email-scramble.svg?style=flat-square)](http://bower.io/search/?q=email-scramble) [![Build Status](https://img.shields.io/travis/ThibWeb/email-scramble.svg?style=flat-square)](https://travis-ci.org/ThibWeb/email-scramble) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/email-scramble.svg?style=flat-square)](https://david-dm.org/ThibWeb/email-scramble#info=devDependencies) [![Code Climate](https://img.shields.io/codeclimate/github/ThibWeb/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/email-scramble) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/ThibWeb/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/email-scramble)
+[![npm](https://img.shields.io/npm/v/email-scramble.svg?style=flat-square)](https://www.npmjs.com/package/email-scramble) [![Build Status](https://img.shields.io/travis/ThibWeb/email-scramble.svg?style=flat-square)](https://travis-ci.org/ThibWeb/email-scramble) [![devDependency Status](https://img.shields.io/david/dev/ThibWeb/email-scramble.svg?style=flat-square)](https://david-dm.org/ThibWeb/email-scramble#info=devDependencies) [![Code Climate](https://img.shields.io/codeclimate/github/ThibWeb/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/email-scramble) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/ThibWeb/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/ThibWeb/email-scramble)
 
 > Have a look at [the examples](https://rawgit.com/ThibWeb/email-scramble/master/examples/index.html).
 > If you'd like to know more about obfuscation techniques and their success ratio, [here's a great blog post on the subject](http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/).
@@ -39,11 +39,10 @@ links.forEach(function decodeLink(link) {
 
 ### Download & import
 
-`email-scramble` is available on [npm](https://www.npmjs.com/package/email-scramble) and [bower](http://bower.io/search/?q=email-scramble), or you can [download a ZIP](https://github.com/ThibWeb/email-scramble/releases)
+`email-scramble` is available on [npm](https://www.npmjs.com/package/email-scramble), or you can [download a ZIP](https://github.com/ThibWeb/email-scramble/releases)
 
 ```
 npm install --save email-scramble
-bower install --save email-scramble
 ```
 
 This library can be used as an ES6 module, Node/Browserify CommonJS-like module, a RequireJS AMD module or a global:
@@ -54,11 +53,6 @@ import emailScramble from 'email-scramble';
 
 // The CommonJS way.
 var emailScramble = require('email-scramble');
-
-// Require email-scramble when defining an AMD module.
-define('mypackage', ['email-scramble'], function (emailScramble) {
-  // [...]
-});
 
 // Global variable.
 var emailScramble = window.emailScramble;
