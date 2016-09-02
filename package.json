@@ -1,6 +1,6 @@
 {
   "name": "email-scramble",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Scrambles email addresses and phone numbers with ROT-18 to hide them from bots",
   "main": "index.js",
   "scripts": {
