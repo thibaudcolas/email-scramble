@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ThibWeb/email-scramble"
+    "url": "git://github.com/thibaudcolas/email-scramble"
   },
   "keywords": [
     "email",
@@ -32,12 +32,12 @@
     "rot",
     "rot18"
   ],
-  "author": "ThibWeb",
+  "author": "thibaudcolas",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ThibWeb/email-scramble/issues"
+    "url": "https://github.com/thibaudcolas/email-scramble/issues"
   },
-  "homepage": "https://github.com/ThibWeb/email-scramble",
+  "homepage": "https://github.com/thibaudcolas/email-scramble",
   "devDependencies": {
     "chai": "^3.2.0",
     "codeclimate-test-reporter": "^0.3.1",
