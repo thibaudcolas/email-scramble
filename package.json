@@ -4,7 +4,9 @@
   "description": "Scrambles email addresses and phone numbers with ROT-18 to hide them from bots",
   "main": "index.js",
   "scripts": {
-    "test": "istanbul cover _mocha -- -R spec",
+    "test:unit": "istanbul cover _mocha -- -R spec",
+    "test": "npm run lint -s && npm run test:unit -s",
+    "test:ci": "npm run test -s && npm run codeclimate -s",
     "linter:js": "jshint",
     "lint:js": "npm run linter:js -s -- index.js test/*.js",
     "lint": "npm run lint:js -s",
