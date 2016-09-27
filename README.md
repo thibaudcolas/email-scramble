@@ -1,16 +1,16 @@
 email-scramble
 ==============
 
-> Universal JavaScript helper to encode/decode email addresses and phone numbers with ROT-18 to hide them from bots. This library can be used server-side with Node or on the front-end (CommonJS, AMD, global variable).
+> Encode/decode email addresses and phone numbers with ROT-18 to hide them from bots. Can be used server-side with Node.js or in a browser (CommonJS, AMD, global variable).
 
 [![npm](https://img.shields.io/npm/v/email-scramble.svg?style=flat-square)](https://www.npmjs.com/package/email-scramble) [![Build Status](https://img.shields.io/travis/thibaudcolas/email-scramble.svg?style=flat-square)](https://travis-ci.org/thibaudcolas/email-scramble) [![devDependency Status](https://img.shields.io/david/dev/thibaudcolas/email-scramble.svg?style=flat-square)](https://david-dm.org/thibaudcolas/email-scramble#info=devDependencies) [![Code Climate](https://img.shields.io/codeclimate/github/thibaudcolas/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/thibaudcolas/email-scramble) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/thibaudcolas/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/thibaudcolas/email-scramble)
 
 > Have a look at [the examples](https://rawgit.com/thibaudcolas/email-scramble/master/examples/index.html).
-> If you'd like to know more about obfuscation techniques and their success ratio, [here's a great blog post on the subject](http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/).
+> If you'd like to know more about obfuscation techniques and their success ratio, [here is a great blog post on the subject](http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/).
 
 ## Getting Started
 
-email-scramble uses a simple ROT transformation. The default rotation is ROT-18, which means that letters will be rotated by 13 and numbers by 5.
+`email-scramble` uses a simple [ROT](https://en.wikipedia.org/wiki/ROT13) transformation. The default rotation is ROT-18: letters will be rotated by 13 and numbers by 5.
 
 ```js
 var encodedEmail = emailScramble.encode('mail@example.com');
@@ -26,7 +26,7 @@ function myROT(str) {
 var myRot = emailScramble.rot.bind(emailScramble, 13, 0);
 ```
 
-Here's a real-world example:
+Here is a real-world example:
 
 ```js
 // <a href="znvygb:znvy@rknzcyr.pbz" data-email-scramble>Send me an email!</a>
@@ -39,7 +39,7 @@ links.forEach(function decodeLink(link) {
 
 ### Download & import
 
-`email-scramble` is available on [npm](https://www.npmjs.com/package/email-scramble), or you can [download a ZIP](https://github.com/thibaudcolas/email-scramble/releases)
+`email-scramble` is available on [npm](https://www.npmjs.com/package/email-scramble), or you can [download a ZIP](https://github.com/thibaudcolas/email-scramble/releases).
 
 ```
 npm install --save email-scramble
