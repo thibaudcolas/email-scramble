@@ -3,7 +3,7 @@ email-scramble
 
 > Encode/decode email addresses and phone numbers with ROT-18 to hide them from bots. Can be used server-side with Node.js or in a browser (CommonJS, AMD, global variable).
 
-[![npm](https://img.shields.io/npm/v/email-scramble.svg?style=flat-square)](https://www.npmjs.com/package/email-scramble) [![Build Status](https://img.shields.io/travis/thibaudcolas/email-scramble.svg?style=flat-square)](https://travis-ci.org/thibaudcolas/email-scramble) [![devDependency Status](https://img.shields.io/david/dev/thibaudcolas/email-scramble.svg?style=flat-square)](https://david-dm.org/thibaudcolas/email-scramble#info=devDependencies) [![Code Climate](https://img.shields.io/codeclimate/github/thibaudcolas/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/thibaudcolas/email-scramble) [![Test Coverage](https://img.shields.io/codeclimate/coverage/github/thibaudcolas/email-scramble.svg?style=flat-square)](https://codeclimate.com/github/thibaudcolas/email-scramble)
+[![npm](https://img.shields.io/npm/v/email-scramble.svg?style=flat-square)](https://www.npmjs.com/package/email-scramble)
 
 > Have a look at [the examples](https://rawgit.com/thibaudcolas/email-scramble/master/examples/index.html).
 > If you'd like to know more about obfuscation techniques and their success ratio, [here is a great blog post on the subject](http://techblog.tilllate.com/2008/07/20/ten-methods-to-obfuscate-e-mail-addresses-compared/).
