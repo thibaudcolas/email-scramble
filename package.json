@@ -1,50 +1,22 @@
 {
   "name": "email-scramble",
   "version": "2.0.1",
-  "description": "Scrambles email addresses and phone numbers with ROT-18 to hide them from bots",
   "main": "index.js",
-  "scripts": {
-    "test:unit": "istanbul cover _mocha -- -R spec",
-    "test": "npm run lint -s && npm run test:unit -s",
-    "test:ci": "npm run test -s && npm run codeclimate -s",
-    "linter:js": "jshint",
-    "lint:js": "npm run linter:js -s -- index.js test/*.js",
-    "lint": "npm run lint:js -s",
-    "codeclimate": "CODECLIMATE_REPO_TOKEN=2e217eae19926fb07c7fdab7896b757a7e7db011244970faa0f2c0e424b71564 codeclimate-test-reporter < coverage/lcov.info"
-  },
+  "files": [
+    "index.js"
+  ],
+  "description": "Scrambles email addresses and phone numbers with ROT-18 to hide them from bots",
+  "license": "ISC",
+  "author": "thibaudcolas",
+  "homepage": "https://github.com/thibaudcolas/email-scramble",
   "repository": {
     "type": "git",
     "url": "git://github.com/thibaudcolas/email-scramble"
   },
-  "keywords": [
-    "email",
-    "mail",
-    "address",
-    "phone",
-    "telephone",
-    "cellphone",
-    "tel",
-    "scramble",
-    "obfuscate",
-    "obfuscation",
-    "hide",
-    "hidden",
-    "mumble",
-    "cloack",
-    "rot",
-    "rot18"
-  ],
-  "author": "thibaudcolas",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/thibaudcolas/email-scramble/issues"
-  },
-  "homepage": "https://github.com/thibaudcolas/email-scramble",
   "devDependencies": {
-    "chai": "^3.2.0",
-    "codeclimate-test-reporter": "^0.3.1",
-    "istanbul": "^0.4.3",
-    "jshint": "^2.5.11",
-    "mocha": "^3.0.0"
+    "jest": "29.6.4"
+  },
+  "scripts": {
+    "test": "jest"
   }
 }

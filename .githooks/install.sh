@@ -1,4 +1,7 @@
-#!/bin/sh
+#!/usr/bin/env bash
+
+# https://sipb.mit.edu/doc/safe-shell/.
+set -eu -o pipefail
 
 # https://gist.github.com/apexskier/efb7c1aaa6e77e8127a8
 # Deploy hooks stored in your git repo to everyone!
@@ -15,8 +18,8 @@ HOOKS=$ROOT/$HOOK_DIR/*
 
 if [ ! -d "$ROOT/$HOOK_DIR" ]
 then
-    echo "Couldn't find hooks dir."
-    exit 1
+  echo "Couldn't find hooks dir."
+  exit 1
 fi
 
 # Clean up existing hooks.
@@ -25,8 +28,10 @@ rm -f $BASE/hooks/*
 # Synlink new hooks.
 for HOOK in $HOOKS
 do
-    (cd $BASE/hooks ; ln -s $HOOK `basename $HOOK` || echo "Failed to link $HOOK to `basename $HOOK`.")
+  (cd $BASE/hooks ; ln -s $HOOK `basename $HOOK` || echo "Failed to link $HOOK to `basename $HOOK`.")
 done
 
-echo "Hooks deployed to $BASE/hooks."
+echo "Git hooks deployed to $BASE/hooks. The hooks automatically check your code on every commit."
+echo "To bypass them for a single commit, use: git commit --no-verify"
+
 exit 0
